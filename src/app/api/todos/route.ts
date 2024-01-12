@@ -37,3 +37,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ error, message: "Could not create Todo" }, { status:400})
   }
 }
+
+export async function DELETE() {
+  try {
+    await prisma.todo.deleteMany({
+      where:{complete:true}
+    })
+    return NextResponse.json('Deleted', { status: 200 });
+  } catch (error) {
+    return NextResponse.json(error, { status: 400 });
+  }
+}
