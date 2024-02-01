@@ -12,7 +12,6 @@ export const WidgetItem = ({title,children}:Props) => {
           <div className="mt-2 flex flex-col justify-center gap-4">
             {children}
           </div>
-          <span className="block text-center text-gray-500">Compared to last week $13,988</span>
         </div>
       </div>
     </div>
